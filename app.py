@@ -20,7 +20,7 @@ class prediction(Resource):
             values = {'Bidder_Tendency':bid_tendency,'Bidding_Ratio':bid_ratio,'Successive_Outbidding':succ_outbid,'Winning_Ratio':win_ratio}
 
             df = pd.DataFrame(values, index=([0]))
-            model_loaded = load_model('DNN.h5')
+            model_loaded = load_model('new_my_best_model.h5')
             predict_s = model_loaded.predict(df)
             print(predict_s)
             return str(np.round(predict_s[0]))
